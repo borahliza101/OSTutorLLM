@@ -1,0 +1,233 @@
+[
+  {
+    "id": "Q01",
+    "topic": "Processes",
+    "difficulty": "Easy",
+    "question": "What is a process in an operating system?",
+    "expected_key_points": [
+      "A process is a running program",
+      "It has its own execution state",
+      "It includes memory/address-space information and CPU register state"
+    ]
+  },
+  {
+    "id": "Q02",
+    "topic": "Processes",
+    "difficulty": "Medium",
+    "question": "What are the main states of a process and what does each state mean?",
+    "expected_key_points": [
+      "Running",
+      "Ready",
+      "Blocked",
+      "Running means currently executing",
+      "Ready means able to run but waiting for CPU",
+      "Blocked means waiting for an event or I/O"
+    ]
+  },
+  {
+    "id": "Q03",
+    "topic": "Threads",
+    "difficulty": "Easy",
+    "question": "What is a thread and why is it useful?",
+    "expected_key_points": [
+      "A thread is an execution unit within a process",
+      "Threads share the process address space/resources",
+      "Multiple threads can allow concurrent activities within a process"
+    ]
+  },
+  {
+    "id": "Q04",
+    "topic": "Threads",
+    "difficulty": "Medium",
+    "question": "What is the difference between a process and a thread?",
+    "expected_key_points": [
+      "A process is a running program with its own address space",
+      "Threads exist within a process",
+      "Threads of the same process share address-space resources",
+      "Threads are generally lighter-weight than separate processes"
+    ]
+  },
+  {
+    "id": "Q05",
+    "topic": "Synchronization",
+    "difficulty": "Easy",
+    "question": "What is a race condition?",
+    "expected_key_points": [
+      "It occurs when multiple threads access shared state concurrently",
+      "The result depends on the timing/interleaving of execution",
+      "It can produce incorrect or unpredictable results"
+    ]
+  },
+  {
+    "id": "Q06",
+    "topic": "Synchronization",
+    "difficulty": "Medium",
+    "question": "What is mutual exclusion and why is it important?",
+    "expected_key_points": [
+      "Mutual exclusion prevents multiple threads from simultaneously entering a critical section",
+      "It protects shared data",
+      "It helps prevent race conditions"
+    ]
+  },
+  {
+    "id": "Q07",
+    "topic": "Semaphores",
+    "difficulty": "Easy",
+    "question": "What is a semaphore and why is it used?",
+    "expected_key_points": [
+      "A semaphore is a synchronization primitive",
+      "It has an integer value",
+      "sem_wait and sem_post operations are used",
+      "It can coordinate threads or control access to shared resources"
+    ]
+  },
+  {
+    "id": "Q08",
+    "topic": "Condition Variables",
+    "difficulty": "Medium",
+    "question": "What is a condition variable and how is it used with a lock?",
+    "expected_key_points": [
+      "A condition variable allows a thread to wait for a condition",
+      "A thread can sleep instead of continuously checking",
+      "It is used together with a lock",
+      "Signaling or broadcasting can wake waiting threads"
+    ]
+  },
+  {
+    "id": "Q09",
+    "topic": "Locks",
+    "difficulty": "Easy",
+    "question": "What is a lock and why is it needed in concurrent programs?",
+    "expected_key_points": [
+      "A lock provides mutual exclusion",
+      "A thread acquires the lock before entering a protected critical section",
+      "Other threads cannot simultaneously access the protected section",
+      "Locks help protect shared data"
+    ]
+  },
+  {
+    "id": "Q10",
+    "topic": "IPC",
+    "difficulty": "Easy",
+    "question": "What is inter-process communication (IPC)?",
+    "expected_key_points": [
+      "IPC allows processes to communicate with each other",
+      "It allows processes to exchange information or coordinate",
+      "Processes may use operating-system-provided communication mechanisms"
+    ]
+  },
+  {
+    "id": "Q11",
+    "topic": "IPC",
+    "difficulty": "Medium",
+    "question": "Why do operating systems provide mechanisms for communication between processes?",
+    "expected_key_points": [
+      "Processes may need to exchange data",
+      "Processes may need to coordinate their activities",
+      "IPC provides controlled mechanisms for communication"
+    ]
+  },
+  {
+    "id": "Q12",
+    "topic": "Deadlocks",
+    "difficulty": "Easy",
+    "question": "What is a deadlock?",
+    "expected_key_points": [
+      "Processes or threads can become permanently blocked",
+      "Each may be waiting for a resource held by another",
+      "No participating process can make progress"
+    ]
+  },
+  {
+    "id": "Q13",
+    "topic": "Deadlocks",
+    "difficulty": "Medium",
+    "question": "How can a deadlock occur when two threads use two locks?",
+    "expected_key_points": [
+      "Thread 1 acquires one lock and waits for the other",
+      "Thread 2 acquires the other lock and waits for the first",
+      "Both threads wait indefinitely",
+      "Neither thread can proceed"
+    ]
+  },
+  {
+    "id": "Q14",
+    "topic": "CPU Scheduling",
+    "difficulty": "Easy",
+    "question": "What is CPU scheduling?",
+    "expected_key_points": [
+      "The operating system selects which runnable process or thread gets CPU time",
+      "Scheduling determines the order or allocation of CPU execution"
+    ]
+  },
+  {
+    "id": "Q15",
+    "topic": "CPU Scheduling",
+    "difficulty": "Medium",
+    "question": "Why is CPU scheduling necessary in a multiprogramming operating system?",
+    "expected_key_points": [
+      "Multiple runnable processes may compete for the CPU",
+      "The operating system needs to decide which process runs",
+      "Scheduling helps manage CPU utilization and process progress"
+    ]
+  },
+  {
+    "id": "Q16",
+    "topic": "Process Execution",
+    "difficulty": "Medium",
+    "question": "What happens to a process when it performs an I/O operation?",
+    "expected_key_points": [
+      "The process may become blocked while waiting for I/O",
+      "The CPU can be given to another runnable process",
+      "The process can become runnable again when the required event completes"
+    ]
+  },
+  {
+    "id": "Q17",
+    "topic": "Concurrency",
+    "difficulty": "Medium",
+    "question": "Why can concurrent programs produce different results when the same code is executed multiple times?",
+    "expected_key_points": [
+      "Threads can execute in different interleavings",
+      "Timing can affect the order of operations",
+      "Shared state can make the result depend on execution ordering",
+      "Race conditions can cause inconsistent results"
+    ]
+  },
+  {
+    "id": "Q18",
+    "topic": "Synchronization",
+    "difficulty": "Hard",
+    "question": "Explain the critical section problem and how synchronization mechanisms help solve it.",
+    "expected_key_points": [
+      "A critical section accesses shared data or resources",
+      "Concurrent access can cause incorrect results",
+      "Mutual exclusion is required for appropriate protection",
+      "Locks or semaphores can be used to coordinate access"
+    ]
+  },
+  {
+    "id": "Q19",
+    "topic": "Threads",
+    "difficulty": "Hard",
+    "question": "What problems can occur when multiple threads access shared data without proper synchronization?",
+    "expected_key_points": [
+      "Race conditions",
+      "Incorrect or inconsistent shared state",
+      "Lost updates or unexpected results",
+      "Synchronization mechanisms are needed to coordinate access"
+    ]
+  },
+  {
+    "id": "Q20",
+    "topic": "Deadlocks",
+    "difficulty": "Hard",
+    "question": "What approaches can an operating system use to deal with deadlocks?",
+    "expected_key_points": [
+      "Deadlock prevention or avoidance",
+      "Deadlock detection",
+      "Recovery after detection",
+      "Different approaches make different trade-offs"
+    ]
+  }
+]

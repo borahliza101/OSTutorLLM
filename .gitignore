@@ -4,4 +4,5 @@ __pycache__/
 .env
 chroma_db/
 data/processed/
-data/evaluation/
+data/evaluation/*
+!data/evaluation/evaluation_questions.json
