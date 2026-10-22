@@ -4,7 +4,7 @@ from pptx import Presentation
 from docx import Document
 
 
-RAW_DIR = Path("data/raw/theory")
+RAW_DIR = Path("data/raw")
 
 OUTPUT_DIR = Path("data/processed/extracted")
 

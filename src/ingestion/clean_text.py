@@ -1,5 +1,4 @@
 from pathlib import Path
-import re
 
 
 INPUT_DIR = Path("data/processed/extracted")
@@ -7,25 +6,32 @@ OUTPUT_DIR = Path("data/processed/cleaned")
 
 
 def clean_text(text):
-    # Replace Windows-style line endings
-    text = text.replace("\r\n", "\n")
+    kept = []
 
-    # Remove excessive spaces at the beginning/end of lines
-    lines = [line.strip() for line in text.split("\n")]
+    for line in text.splitlines():
+        line = line.rstrip()            # remove spaces at the END of the line only
+        stripped = line.strip()         # a trimmed copy, used only for checking
+        compact = stripped.upper().replace(" ", "")   # uppercase, no spaces
 
-    # Remove empty lines
-    lines = [line for line in lines if line]
+        # 1. Drop OSTEP header/footer lines
+        if "WWW.OSTEP.ORG" in compact:
+            continue
+        if "[VERSION" in compact:
+            continue
+        if stripped == "OPERATING SYSTEMS":
+            continue
 
-    # Join lines back together
-    text = "\n".join(lines)
+        # 2. Drop lines that are only a page number (1 to 3 digits)
+        if stripped.isdigit() and len(stripped) <= 3:
+            continue
 
-    # Replace multiple spaces with a single space
-    text = re.sub(r"[ \t]+", " ", text)
+        # 3. Keep at most one blank line in a row
+        if stripped == "" and kept and kept[-1] == "":
+            continue
 
-    # Replace more than two consecutive newlines with two
-    text = re.sub(r"\n{3,}", "\n\n", text)
+        kept.append(line)
 
-    return text.strip()
+    return "\n".join(kept).strip()
 
 
 if __name__ == "__main__":
